@@ -12,6 +12,9 @@ Access is free but requires sign-up
 * On the landing page, click "Run a query in BigQuery"
 * You can now see the BigQuery web console
 * In the centre of the page, click "Compose a new query"
+* To see the Covid-19 data: type “covid-19” in the explorer search bar
+  - You should then see “covid-19-dimensions-ai” (click the pin icon to keep it handy)
+
 
 # Full documentation
 
