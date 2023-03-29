@@ -13,3 +13,7 @@ Access is free but requires sign-up
 * You can now see the BigQuery web console
 * In the centre of the page, click "Compose a new query"
 
+# Full documentation
+
+See documentation and examples of Google SQL: https://cloud.google.com/bigquery/docs 
+
