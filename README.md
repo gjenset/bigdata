@@ -9,7 +9,7 @@ Access is free but requires sign-up
 * Log in
   - Create account if you haven’t already.
   - Instructions: https://github.com/gjenset/bigdata/blob/main/google_cloud_signup.md
-* On the landing page, click ``Run a query in BigQuery''
+* On the landing page, click "Run a query in BigQuery"
 * You can now see the BigQuery web console
-* In the centre of the page, click ``Compose a new query''
+* In the centre of the page, click "Compose a new query"
 
