@@ -102,3 +102,30 @@ order by n_publications desc``
 What are the names of the top 3 publishers?
 
 
+# Advanced examples
+
+These examples use some more advanced syntax to show further possibilities for manipulating data with SQL in BigQuery. Specifically, they deal with arrays, which is the way that BigQuery handles multiple instances of the same kind of data per row. For instance, a paper will often have more than one author, and hence be linked to more than one country. However, instead of repeating the information about the paper over multiple rows (one row per author), BigQuery allows you to store the information in an array, inside a cell. We can use some special functions to deal with this.
+
+## Let's count the average number of authors per paper
+
+Try the following:
+
+```
+select avg(array_length(researcher_ids)) from `covid-19-dimensions-ai.data.publications`
+```
+
+In this example the `array_length` function returns the number of items (i.e. authors) in the "researcher_ids" column. Since this is a number we can directly apply the `avg` function to it.
+
+## Let's find the top funding countries
+
+Try the following:
+
+``` 
+select fc, count(fc) as n from `covid-19-dimensions-ai.data.publications` 
+left join unnest(funder_countries) as fc
+group by fc
+order by n desc
+limit 5
+```
+
+In this example the `left join unnest` statement untangles the array containing all the countries that have funded the research in a paper. In other words, we get a "flat" representation where the information about a paper is duplicated for each funding country that contributed. For that reason, we just count the occurrences of the funding countries instead of the document id (since it would be duplicated: alternatively, count document ids but use `count(distinct(id))` instead).
