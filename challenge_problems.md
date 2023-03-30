@@ -11,4 +11,26 @@ Hint: for this exercise, you will have to combine some syntax elements from seve
 
 ## Find the publication trends
 
-Calculate the number of publications by year.
+Calculate the number of publications by year and order them so that you can clearly see a time trend in terms of numbers of publications.
+Hint: there's a similar query in the in-class exercises, but you will have to change the ordering.
+
+## Find the average number of citations by year
+
+For each year, calculate the average number of citations for the articles published in that year. 
+There's different ways of doing this: all are fine but one is more efficient than the others.
+
+## Take an in-depth look at the top papers
+
+For this exercise, you need find the doi (digital object identifier) in the top 3 most cited papers. If one of them is missing a doi, take the next one on the list that has one.
+
+Once you have the dois, you can find the original article by opening a browser tab, and writing:
+
+```
+http://doi.org/
+```
+
+followed by the doi. Complete example:
+
+```
+http://doi.org/
+```
