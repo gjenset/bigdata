@@ -170,4 +170,23 @@ limit 100 /* this comment...
 ```
 ## Sub-queries (as shown in class)
 
-You can nest queries together in SQL to get more efficient code. Consider the example 
+You can nest queries together in SQL to get more efficient code. Consider the example above to identify the article with the highest number of citations:
+
+```
+select title, doi, publisher.name, year from `covid-19-dimensions-ai.data.publications`
+where citations_count >= 35240
+```
+
+In this case, there `where` condition uses a hard-coded citation count (the maximum at the present time). But what if that number changes? A more efficient and elegant way to do this is to use a sub-query, where we establish the filtering condition (i.e. what is the max) via another query, like this:
+
+```
+select title, doi, publisher.name, year from `covid-19-dimensions-ai.data.publications`
+where citations_count = (
+ select max(citations_count) from `covid-19-dimensions-ai.data.publications`
+ )
+ ```
+ 
+ In the new code version above, the query will always return the correct result even when the underlying data changes. Also, we don't have to use `>=`, a simple `=` is sufficient because the sub-query will always return the max value.
+ 
+ Note that the sub-query needs to be enclosed in round brackets.
+```
