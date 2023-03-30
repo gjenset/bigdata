@@ -156,3 +156,18 @@ select count(*) from `covid-19-dimensions-ai.data.publications
 
 ## Commenting your code (as shown in class)
 
+There are two ways to comment out code in BigQuery SQL:
+
+* two hyphens (--) for a single line
+* a forwards slash followed by a star (opening) and then the reverse (closing) for multiple lines
+
+Examples:
+
+```
+select * from `covid-19-dimensions-ai.data.publications`  -- this is a comment on a single line
+limit 100 /* this comment...
+... spans multiple lines */
+```
+## Sub-queries (as shown in class)
+
+You can nest queries together in SQL to get more efficient code. Consider the example 
