@@ -19,6 +19,24 @@ Hint: there's a similar query in the in-class exercises, but you will have to ch
 For each year, calculate the average number of citations for the articles published in that year. 
 There's different ways of doing this: all are fine but one is more efficient than the others.
 
+## Find the frequency of document types in the data
+
+For this exercise, you must use the "dot" notation for the `document_type` fiel like this:
+
+```
+document_type.classification
+```
+
+
+## Find the number of papers that have a citation above the average
+
+For this exercise, count the number of papers, filtering by citation score.
+
+## Find the most cited authors
+
+Since each article can have multiple authors, you will need to follow the `left join unnest` example from the in-class exercises, and to aggregate (`sum`) their citations over all their papers.
+
+
 ## Take an in-depth look at the top papers
 
 For this exercise, you need find the doi (digital object identifier) in the top 3 most cited papers. If one of them is missing a doi, take the next one on the list that has one.
@@ -32,5 +50,5 @@ http://doi.org/
 followed by the doi. Complete example:
 
 ```
-http://doi.org/
+http://doi.org/10.1001/jama.2020.2648
 ```
