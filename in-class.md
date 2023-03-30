@@ -143,3 +143,16 @@ limit 5
 ```
 
 In this example the `left join unnest` statement untangles the array containing all the countries that have funded the research in a paper. In other words, we get a "flat" representation where the information about a paper is duplicated for each funding country that contributed. For that reason, we just count the occurrences of the funding countries instead of the document id (since it would be duplicated: alternatively, count document ids but use `count(distinct(id))` instead).
+
+## Running multiple queries in one query window (as shown in class)
+
+With Google BigQuery, you can execute multiple sequential queries by adding a semi-colon after each query. In the web console, you can click to view the output you want to see. For example:
+
+```
+select * from `covid-19-dimensions-ai.data.publications` 
+limit 100;
+select count(*) from `covid-19-dimensions-ai.data.publications
+```
+
+## Commenting your code (as shown in class)
+
